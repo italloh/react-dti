@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux'
+import AppBar from './layout/AppBar'
+import store from './store/index'
 import './App.css';
+import TodoContainer from './todo/todoContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <Provider store={store}>
+      <div className="App">
+        <AppBar />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <TodoContainer />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </div>
+    </Provider>
   );
 }
 
